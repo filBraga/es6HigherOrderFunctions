@@ -1,6 +1,6 @@
 const data = require('../data/zoo_data');
 
-const getSpeciesByIds = (...ids) => data.species.filter((spec) => ids.includes(spec.id));
+const getSpeciesByIds = (...ids) => data.species.filter((element) => ids.includes(element.id));
 // (spec) => ids.includes(spec.id)
 // myArray.filter(x => x.id === '45'); duvida, por que essa nao funciona.
 
