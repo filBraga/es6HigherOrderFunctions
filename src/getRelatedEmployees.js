@@ -6,7 +6,14 @@ function isManager(id) {
 }
 
 function getRelatedEmployees(managerId) {
-  return managerId;
+  const managerArr = data.employees.filter((id) => id.managers.includes(managerId));
+  const finalArr = managerArr.map((value) => `${value.firstName} ${value.lastName}`);
+  if (isManager(managerId) === false) {
+    throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
+  }
+  return finalArr;
 }
+
+// getRelatedEmployees('9e7d4524-363c-416a-8759-8aa7e50c0992');
 
 module.exports = { isManager, getRelatedEmployees };
